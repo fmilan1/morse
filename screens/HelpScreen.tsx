@@ -34,7 +34,7 @@ export default function HelpScreen() {
                             alignItems: 'center',
                             gap: 15,
                             flexDirection: 'row',
-                            width: 150,
+                            width: 180,
                             flexGrow: 1,
                         }}
                     >
@@ -42,7 +42,7 @@ export default function HelpScreen() {
                             style={{
                                 fontSize: 30,
                                 fontWeight: 'bold',
-                                width: 35,
+                                width: 37,
                             }}
                         >{l}:</ThemedText>
                         <View

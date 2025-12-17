@@ -10,6 +10,7 @@ import ThemedView from '../components/ThemedView';
 import ThemedText from '../components/ThemedText';
 import Icon from '../components/Icon';
 import PlayButton from '../components/PlayButton';
+import ColorTheme from '../Colors';
 export const delay = async (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 export default function WriteScreen() {
@@ -44,7 +45,7 @@ export default function WriteScreen() {
         timerRef.current = setTimeout(() => {
             setLetters([...letters, letterSignals.map(l => l.type == SignalType.dot ? '.' : '-')]);
             setLetterSignals([]);
-        }, 300);
+        }, 150);
     }, [letterSignals]);
 
     useEffect(() => {
@@ -55,7 +56,7 @@ export default function WriteScreen() {
         timerRef.current = setTimeout(() => {
             setWords([...words, letters]);
             setLetters([]);
-        }, 700);
+        }, 300);
     }, [letters]);
 
     useEffect(() => {
@@ -244,6 +245,7 @@ export default function WriteScreen() {
                             <ThemedText
                                 style={{
                                     fontWeight: 'bold',
+                                    color: ColorTheme.yellow,
                                 }}
                             >
                                 {getCharFromMorseCode(letterSignals.map(ls => ls.type == SignalType.dot ? '.' : '-').join(''))}
